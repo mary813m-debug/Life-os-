@@ -102,5 +102,9 @@ $("make-plan").addEventListener("click",()=>{const goal=$("goal").value.trim();i
 const out=$("plan-output");out.hidden=false;out.replaceChildren();const heading=document.createElement("strong");heading.textContent="خطة بداية لهدفك";const p=document.createElement("p");p.textContent="هدفك: "+goal;const ol=document.createElement("ol");["قسّم الهدف إلى خطوة صغيرة يمكن تنفيذها اليوم.","خصّص 15 إلى 20 دقيقة للبدء دون مشتتات.","سجّل ما أنجزته وحدّد الخطوة التالية."].forEach(s=>{const li=document.createElement("li");li.textContent=s;ol.append(li)});const b=document.createElement("button");b.className="secondary";b.textContent="أضف الخطوة الأولى إلى مهامي";b.addEventListener("click",()=>{tasks.unshift({id:Date.now(),text:"البدء بالهدف: "+goal,done:false});save();render();toast("أُضيفت الخطوة إلى مهامك")});out.append(heading,p,ol,b)});
 const now=new Date();$("today-label").textContent=now.toLocaleDateString("ar",{weekday:"long",day:"numeric",month:"long"});render();
 </script>
-</body>
+<footer style="text-align:center;padding:24px 12px;margin-top:30px;border-top:1px solid #ddd;">
+  <p>تم التصميم والتطوير بواسطة</p>
+  <strong style="font-size:20px;">Maryam Al-Hazmi</strong>
+  <p style="font-size:13px;opacity:0.7;">Founder &amp; Creator of Life-os</p>
+</footer></body>
 </html>
